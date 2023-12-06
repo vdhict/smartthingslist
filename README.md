@@ -46,4 +46,4 @@ When you run the script, it will output device information in a JSON format. Her
 
 ## License
 
-MIT license
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
