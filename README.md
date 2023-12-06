@@ -1,17 +1,49 @@
-# Smartthingslist
+# SmartThings Device Lister
 
-This is a small script to list Smartthings devices from a certain location, filtering on a name or part of the name.
+This script lists devices in a specified location from a SmartThings account. It filters the devices based on their name or a part of their name and outputs the results in JSON format.
 
-I created this script as a companion to my home-infrastructure IaaC attempt to fully automate the build of my home infrastructure.
+## Installation
 
-Usage:
+Before running the script, ensure you have Python installed on your system. Additionally, you need to install the `aiohttp` and `pysmartthings` libraries. You can install these dependencies using pip:
 
-```shell
-smartthingslist.py [-h] --location LOCATION --key KEY --devicename DEVICENAME
+```bash
+pip install aiohttp pysmartthings
 ```
 
---location: The location name of the Smartthings location
---key: Smartthings API key
---devicename: (part of) the name of the device to find
+Or use a python virtual environment. The requirements.txt file lists the required modules.
 
-Output is a json formatted list of device labels and their ID's.
+## Usage
+
+The script requires three command line arguments:
+- `--location`: The name of the location in SmartThings.
+- `--key`: Your SmartThings API key.
+- `--devicename`: The name or part of the name of the device.
+
+Run the script using the following command:
+
+```bash
+python smartthingslist.py --location "YourLocationName" --key "YourAPIKey" --devicename "DeviceName"
+```
+
+Replace `script_name.py` with the name of your script file, and provide the appropriate values for each argument.
+
+## Example Output
+
+When you run the script, it will output device information in a JSON format. Here's an example of what the output might look like:
+
+```json
+[
+    {
+        "label": "Living Room Light",
+        "device_id": "12345abcde"
+    },
+    {
+        "label": "Kitchen Sensor",
+        "device_id": "67890fghij"
+    }
+]
+```
+
+## License
+
+MIT license
